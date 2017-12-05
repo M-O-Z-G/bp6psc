@@ -1,0 +1,40 @@
+doctype html
+- var nameSite = "Sample Site"
+html.no-js(lang="" itemscope itemtype="http://schema.org/Article")
+	block head
+		head
+			meta(charset='utf-8')
+			meta(http-equiv='x-ua-compatible' content='ie=edge')
+			// Page Title. Maximum length 60-70 characters
+			title #{title} - #{nameSite} 
+			// Page description. No longer than 155 characters.
+			meta(name='description' content=description)
+			include _metaSocial
+			meta(name='viewport' content='width=device-width, initial-scale=1')
+			link(rel='manifest' href='site.webmanifest')
+			link(rel='apple-touch-icon' href='icon.png')
+			// inject:css
+			// endinject
+	body
+		<!--[if lte IE 9]>
+			p.browserupgrade
+				| You are using an #[strong outdated] browser.
+				| Please #[a(href='https://browsehappy.com/') upgrade your browser] to improve your experience and security.
+		<![endif]-->
+
+		//- Add your site or application content here
+		block content
+		block scripts
+			// inject:libs:js
+			// endinject
+			script(src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous')
+			script.
+				window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\\/script>')
+			script(src='js/plugins.js')
+			script(src='js/main.js')
+
+			// Google Analytics: change UA-XXXXX-Y to be your site's ID.
+			script.
+				window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+				ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+			script(src='https://www.google-analytics.com/analytics.js' async='' defer='')

@@ -1,0 +1,29 @@
+@import "_normalize"
+
+
+// Boilerplate 6 Font Size and Colors Settings
+$textColor:= #222
+$selectionColor:= #b3d4fc
+$selectionColorText:= inherit
+$fontSize:= 1em
+$lineHeight:= 1.4
+$hrColor:= #ccc
+$popupOldBrowserBG:= #ccc
+$popupOldBrowserColor:= #000
+$printColor:= #000
+$blackQuoteColor:= #999
+
+// Boilerplate 6 Selection Mixins
+selection()
+	background $selectionColor
+	color $selectionColorText
+	text-shadow none
+
+// Boilerplate 6 Fist Part of Styles
+@import "_bp6s"
+
+// Author's custom styles
+@import "_custom" 
+
+// Boilerplate 6 Last Part of Styles
+@import "_bp6e"
